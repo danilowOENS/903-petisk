@@ -1,0 +1,12 @@
+{% extends 'shared/layout.html' %}
+
+{% load staticfiles %}
+
+{% block conteudo %}
+
+<h1>Lista de ongs cadastradas</h1>
+{% for ong in ongs %}
+    <p><strong>{{ong.name}} {{pessoa.sobrenome}} </strong></p>
+{%endfor%}
+
+{% endblock %}

@@ -8,12 +8,12 @@
 
         <h1>Bem-Vindx {{nome}}</h1>
     {% else %}
-        <h1>Bem-Vindx a  Ong</h1>
+        <h1>Bem-Vindx ao PETISK</h1>
     {% endif %}
 
 
 <h1> bem-vindo ao PETISK </h1>
-<h2> <a href="/pessoas">Clique aqui</a> </h2>
+<h2> <a href="/ongs">Clique aqui</a> </h2>
 <h2><strong>cadastre-se para adoção</strong></h2>
 
 <form action="" method="">
@@ -32,23 +32,23 @@
         <label for="email">E-mail</label>
         <input type="email" name="email"required>
 
+        <label for="str_cep">CEP</label>
+        <input type="text" name="str_cep" maxlength="8"required>
+
+        <label for="str_numero">numero</label>
+        <input type="text" name="str_numero" maxlength="5">
 
         <label for="complemento">complemento</label>
         <input type="text" name="complemento"required>
 
-        
         <label for="telefone">Telefone: </label>
         <input type="text" name="telefone">
 
+        <label for="celular">Celular: </label>
+        <input type="text" name="celular"required>
 
         <label for="motivo">Motivo: </label>
         <textarea name="motivo" cols="30" rows="10"></textarea>
 
         <input type="submit" value="cadastrar">
     </form>
-
-
-
-
-
-{% endblock %}
