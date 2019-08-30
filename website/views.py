@@ -9,20 +9,20 @@ def index(request):
     if request.method == 'POST':
         pessoa = Pessoa()
         pessoa.nome = request.POST.get('nome')
-        pessoa.sobrenome = requerst.POST.get('sobrenome') 
-        pessoa.data_nacimento = requerst.POST.get('data_nacimento') 
-        pessoa.email = requerst.POST.get('email') 
-        pessoa.str_cep = requerst.POST.get('str_cep') 
-        pessoa.str_numero = requerst.POST.get('str_numero') 
-        pessoa.complemento = requerst.POST.get('complemento') 
-        pessoa.genero = requerst.POST.get('genero') 
-        pessoa.telefone = requerst.POST.get('telefone') 
-        pessoa.celular = requerst.POST.get('celular') 
-        pessoa.motivo = requerst.POST.get('motivo') 
+        pessoa.sobrenome = request.POST.get('sobrenome') 
+        pessoa.data_nascimento = request.POST.get('data_nascimento') 
+        pessoa.email = request.POST.get('email') 
+        pessoa.str_cep = request.POST.get('str_cep') 
+        pessoa.str_numero = request.POST.get('str_numero') 
+        pessoa.complemento = request.POST.get('complemento') 
+        pessoa.genero = request.POST.get('genero') 
+        pessoa.telefone = request.POST.get('telefone') 
+        pessoa.celular = request.POST.get('celular') 
+        pessoa.motivo = request.POST.get('motivo') 
         pessoa.save()
 
         contexto = {
-        'nome': pessoa.nome
+            'nome': pessoa.nome
         }
         return render(request, 'index.html', contexto)
 
@@ -41,33 +41,33 @@ def pessoas(request):
 def cadastrar(request):
 
     if request.method == 'POST':
-        Ong= Pessoa()
-        Ong.nome = request.POST.get('nome')
-        Ong.sobrenome = requerst.POST.get('sobrenome') 
-        Ong.data_nacimento = requerst.POST.get('data_nacimento') 
-        Ong.email = requerst.POST.get('email') 
-        Ong.str_cep = requerst.POST.get('str_cep') 
-        Ong.str_numero = requerst.POST.get('str_numero') 
-        Ong.complemento = requerst.POST.get('complemento') 
-        Ong.genero = requerst.POST.get('genero') 
-        Ong.telefone = requerst.POST.get('telefone') 
-        Ong.celular = requerst.POST.get('celular') 
-        Ong.motivo = requerst.POST.get('motivo') 
-        Ong.save()
+        x= Ong()
+        x.nome = request.POST.get('nome')
+        x.sobrenome = request.POST.get('sobrenome') 
+        x.data_nacimento = request.POST.get('data_nacimento') 
+        x.email = request.POST.get('email') 
+        x.str_cep = request.POST.get('str_cep') 
+        x.str_numero = request.POST.get('str_numero') 
+        x.complemento = request.POST.get('complemento') 
+        x.genero = request.POST.get('genero') 
+        x.telefone = request.POST.get('telefone') 
+        x.celular = request.POST.get('celular') 
+        x.motivo = request.POST.get('motivo') 
+        x.save()
         
         
         contexto = {
-        'nome': Ong.nome
+        'nome': x.nome
         }
-        return render(request, 'index.html', contexto)
+        return render(request, 'cadastro_de_ong.html', contexto)
 
-    return render(request, 'index.html')
+    return render(request, 'cadastro_de_ong.html')
 
-    def ong(request):
-    ong = ongs.objects.filter(ativo=True).all()
+def ong_cadastro(request):
+    o = Ong.objects.all()
     
     contexto = {
-        'ong': ong
+        'ong': o
     }
     return render(request, 'ongs.html', contexto)
 
